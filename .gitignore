@@ -1,5 +1,5 @@
 build/
-CMakeFiles
+CMakeFiles/
 
 # Prerequisites
 *.d
@@ -27,7 +27,7 @@ CMakeFiles
 *.lai
 *.la
 *.a
-*.lib
+
 
 # Executables
 *.exe
