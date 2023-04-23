@@ -32,3 +32,4 @@ CMakeFiles/
 *.exe
 *.out
 *.app
+*.pdb

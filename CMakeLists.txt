@@ -6,12 +6,20 @@ project(OLiOli VERSION 1.0.0)
 
 SET(FFMPEG_LIBRARY_PATH ${CMAKE_CURRENT_LIST_DIR}/libs/ffmpeg)
 SET(SDL2_LIBRARY_PATH ${CMAKE_CURRENT_LIST_DIR}/libs/sdl2)
+
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/include)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/include/ffmpeg)
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/include/sdl2)
 
-set(SOURCE_FILES src/main.cpp)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/headers)
 
-add_executable(OLiOli src/main.cpp)
+set(HEADER_FILES 
+						headers/demuxer.h)
+
+set(SOURCE_FILES 
+						src/demuxer.cpp
+						src/main.cpp)
+
+add_executable(${PROJECT_NAME}  ${SOURCE_FILES} ${HEADER_FILES})
 #target_link_libraries(${PROJECT_NAME} SDL2::SDL2 SDL2::SDL2main 
 target_link_libraries(${PROJECT_NAME} 
 						${SDL2_LIBRARY_PATH}/SDL2.lib
